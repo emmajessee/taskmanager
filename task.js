@@ -2,7 +2,6 @@
 
 //TASKS FOR TASK MANAGER
 const menu = `TASK MANAGER;
-
 What would you like to do (Please enter one of the options below):
 "TASKS" - Display All Tasks
 "NEW" - Add A New Task
@@ -11,10 +10,10 @@ What would you like to do (Please enter one of the options below):
 `;
 
 // TASKS ARRAY (come back and personalize)
-const tasks = [
-'Charge Macbook', 
-'Master JavaScript'
-];
+const tasks = `
+Charge Macbook
+Master JavaScript
+`;
 
 // DISPLAYS TASKS
 let showTasks = ``;
@@ -29,18 +28,23 @@ let num;
 let removed;
 
 //
-let userInput = prompt(menu);
+let userInput;
 
 while(userInput !== "CLOSE"){
-    userInput - prompt(menu);
+    userInput = prompt(menu);
 
-    if (userInput = "TASKS") {
+    if (userInput === "TASKS") {
         alert(tasks);
     }
-
-
-
+    
+    //fix broken alert
+    if (userInput === "NEW") {
+        let newTask = prompt(`ENTER YOUR NEW TASK'S NAME`);
+        tasks.push(newTask); 
+        alert(`Task "${newTask}" added successfully!`);
+    }
     break;
 }
 
-alert('Thank you for using Task Manager!')
+alert('Thank you for using Task Manager!');
+
