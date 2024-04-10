@@ -10,10 +10,7 @@ What would you like to do (Please enter one of the options below):
 `;
 
 // TASKS ARRAY (come back and personalize)
-const tasks = `
-Charge Macbook
-Master JavaScript
-`;
+const tasks = ['Master JavaScript', 'Charge Macbook']
 
 // DISPLAYS TASKS
 let showTasks = ``;
@@ -34,17 +31,20 @@ while(userInput !== "CLOSE"){
     userInput = prompt(menu);
 
     if (userInput === "TASKS") {
-        alert(tasks);
+        alert(tasks.join('\n')); 
     }
     
-    //fix broken alert
+    //fix broken alert DONE!
     if (userInput === "NEW") {
         let newTask = prompt(`ENTER YOUR NEW TASK'S NAME`);
-        tasks.push(newTask); 
-        alert(`Task "${newTask}" added successfully!`);
+        
+        if (newTask !== null && newTask !== '') {
+            tasks.push(newTask);
+            alert(tasks.join('\n')); //figure out what this means after you googled it
+        }
     }
-    break;
+    break; 
 }
-
 alert('Thank you for using Task Manager!');
+
 
