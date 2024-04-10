@@ -43,6 +43,10 @@ while(userInput !== "CLOSE"){
             alert(tasks.join('\n')); //figure out what this means after you googled it
         }
     }
+    if (userInput === "REMOVE") {
+        let num = prompt(`Enter the name of the task you want to remove:\n${tasks.map(task => `- ${task}`).join('\n')}`);
+
+    }
     break; 
 }
 alert('Thank you for using Task Manager!');
