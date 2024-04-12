@@ -41,13 +41,31 @@ while(userInput !== "CLOSE"){
         if (newTask !== null && newTask !== '') {
             tasks.push(newTask);
             alert(tasks.join('\n')); //figure out what this means after you googled it
+        } 
+        if (userInput === '') {
+            prompt('You cannot enter a blank task')
         }
     }
     if (userInput === "REMOVE") {
-        let num = prompt(`Enter the name of the task you want to remove:\n${tasks.map(task => `- ${task}`).join('\n')}`);
-
+        let tasktoremove = prompt('Enter the name of the task you want to remove');
+        let index = tasks.indexOf(tasktoremove);
+        //this is the only way i could figure how to do it instead of usering num because the list wouldnt work on windows 
+        if (index !== -1) {
+            removed = tasks.splice(index, 1)
+            alert(tasks.join('\n')); //WHY does it never work the ${} thing...
+        } else {
+            prompt('Please enter a valid task name')
+        } 
+        if (userInput === '') {
+            prompt ('Enter a valid task name')
+        }
     }
+    
+
     break; 
+}
+
+
 }
 alert('Thank you for using Task Manager!');
 
